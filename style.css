@@ -88,17 +88,20 @@ p{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.grid-item > a {
+.grid-item a {
     font-size:x-large;
+    margin-bottom:70px;
 }
-.grid-item > img {
-    width:50px;
-    height:50px;
+.grid-item img {
+    width:70px;
+    height:70px;
+    margin:0px;
     float:left;
     padding-right:5px;
 }
-.grid-item > p {
+.grid-item p {
     float:left;
+    margin:0px;
 }
 /*---------------------*/
 #footer{
@@ -133,11 +136,17 @@ button{
     background-color: #d1dede;
 
 }
+#root-comment{
+    border:none;
+    margin-left:0px;
+}
 .comment{
-    margin-top:10px;
-    margin-bottom:10px;
+    /*margin-top:10px;
+    margin-bottom:10px;*/
     margin-left:20px;
     padding:2px;
+    border-left-color: #909090;
+    border-left-style:solid;
     /*max-width: 50%;*/
     background-color: #d7d7d7;
 }

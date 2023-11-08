@@ -40,6 +40,9 @@ function addComment(ev){
     posterName.textContent = nameField;
     document.getElementById("new-comment").value = '';
     document.getElementById("name").value = '';
+    if(commentTarget == document.getElementById("comments")){
+        commentWrapper.id = 'root-comment';
+    }
     if(document.getElementById("nocomments") != null){
         console.log("removing");
         document.getElementById("nocomments").remove();
