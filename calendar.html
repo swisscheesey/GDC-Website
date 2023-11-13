@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="frame">
+    <div class="frame" onmousedown="startDrag(event)">
       <div class="div">
-
-        <!DOCTYPE html>
-        <html lang="en">
         <head>
             <meta charset="UTF-8">
             <title>Interactive Calendar</title>
@@ -236,24 +233,54 @@
             <script src="header-footer.js"></script>
         </body>
         </html>
-
-        <!-- <div class="overlap"><div class="text-wrapper">Home</div></div>
-        <div class="overlap-group"><div class="text-wrapper-2">Calendar</div></div>
-        <div class="div-wrapper"><div class="text-wrapper-3">Projects</div></div>
-        <div class="overlap-2"><div class="text-wrapper-4">Resources</div></div>
-        <div class="overlap-3"><div class="text-wrapper-5">About Us</div></div>
-        <div class="overlap-4"><div class="text-wrapper-6">Post</div></div>
-        <div class="overlap-5"><div class="text-wrapper-7">Enter message here:</div></div>
-        <div class="overlap-6"><div class="text-wrapper-8">LSU GDC</div></div>
-        
-        <div class="overlap-7">
-          <div class="rectangle"></div>
-          <div class="text-wrapper-9">Key Legend:</div>
-        </div> -->
         <div class="overlap-4"><div class="text-wrapper-6">Post</div></div>
         <div class="overlap-5"><div class="text-wrapper-7">Enter message here:</div></div>
         <div class="overlap-7">
+            <div class="text-wrapper-9">Key Legend:</div>
             <div class="rectangle"></div>
+            <div class="icon" id="icon1" draggable="true" ondragstart="drag(event)">⭐</div>
+        </div>
+    </div>
+    <script>
+        let activeItem = null;
+        let offsetX, offsetY;
+    
+        function drag(e) {
+            e.preventDefault(); // Prevent default drag-and-drop behavior
+            activeItem = e.target;
+            const rect = activeItem.getBoundingClientRect();
+            offsetX = e.clientX - (rect.left + rect.width / 2);
+            offsetY = e.clientY - (rect.top + rect.height / 2);
+            e.dataTransfer.setData('text/html', '');
+        }
+    
+        function startDrag(e) {
+            function moveIcon(e) {
+                const x = e.clientX - offsetX;
+                const y = e.clientY - offsetY;
+    
+                activeItem.style.left = x + 'px';
+                activeItem.style.top = y + 'px';
+    
+                // Scroll the webpage up when dragging the icon up
+                if (y < 0) {
+                    window.scrollBy(0, -10); // Adjust the scroll speed as needed
+                }
+            }
+    
+            function stopDrag() {
+                document.removeEventListener('mousemove', moveIcon);
+                document.removeEventListener('mouseup', stopDrag);
+            }
+    
+            document.addEventListener('mousemove', moveIcon);
+            document.addEventListener('mouseup', stopDrag);
+        }
+    </script>
+    
+    
+    
+    
             <div class="text-wrapper-9">Key Legend:</div>
           </div>
       </div>
