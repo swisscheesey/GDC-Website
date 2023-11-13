@@ -161,9 +161,12 @@ button{
 }
 .comment h3{
     margin:0px;
+    padding:0px;
 }
 .comment p{
     font-family:'Arial Narrow', Arial, sans-serif;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 .message-content{
     /*You can style the inside of a comment here*/
