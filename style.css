@@ -8,6 +8,8 @@ p{
 }
 /*---------------------*/
 #header{
+    font-family:'Geaux', 'Archivo Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    z-index: 100;
     left:0;
     top:0;
     width:100%;
@@ -132,13 +134,15 @@ textarea{
 }
 
 button{
-    color: black;
-    background-color: #d1dede;
-
+    /* color: black;
+    background-color: #d1dede; */
+    background-color: #461d7c;
+    color:#fccf23;
 }
 #root-comment{
     border:none;
     margin-left:0px;
+    background-color:#d9d9d9;
 }
 .comment{
     /*margin-top:10px;
@@ -148,11 +152,54 @@ button{
     border-left-color: #909090;
     border-left-style:solid;
     /*max-width: 50%;*/
-    background-color: #d7d7d7;
 }
-.comment > h3{
+.comment button{
+    margin-right:10px;
+    margin-bottom:10px;
+    background-color: #461d7c;
+    color:#fccf23;
+}
+.comment h3{
     margin:0px;
 }
-.comment > p{
-    font-family:'Arial Narrow', Arial, sans-serif
+.comment p{
+    font-family:'Arial Narrow', Arial, sans-serif;
+}
+.message-content{
+    /*You can style the inside of a comment here*/
+}
+#comments{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+#purgeLS{
+    display:none;
+}
+.add-comment{
+    max-width:318px;
+    /*if using right-aligned buttons*/
+    /*margin-bottom:24px*/
+}
+.add-comment > button{
+    /*moves buttons to right side of comment box*/
+    /* float:right;
+    margin-right:0px;
+    margin-left:10px;
+    margin-top:2px; */
+}
+#cancelReply, #delete{
+    background-color:rgb(200, 0, 0);
+    color:#ffffff;
+}
+#expand{
+    background-color: #909090;
+    color:black;
+    width:24px;
+    text-align: center;
+}
+#contract{
+    background-color: #909090;
+    color:black;
+    width:24px;
+    text-align: center;
 }

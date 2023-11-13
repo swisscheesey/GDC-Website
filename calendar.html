@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="calendar-style.css" />
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="calendar-style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="frame">
@@ -52,6 +53,8 @@
         
         </head>
         <body style="background-color: #461D7C;">
+            <div id="header"></div> <!-- TEST1234 -->
+            <div style="margin: 50px">.</div>
             <div class="container mt-5">
                 <div class="card">
                     <h3 class="card-header" id="monthAndYear"></h3>
@@ -216,6 +219,7 @@
                         }
         
         }
+        
             </script>
         
             <!-- Bootstrap JavaScript (jQuery and Popper.js) -->
@@ -228,10 +232,12 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
                     integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
                     crossorigin="anonymous"></script>
+            <div id="footer" style="display:none"></div> <!-- TEST1234 -->
+            <script src="header-footer.js"></script>
         </body>
         </html>
 
-        <div class="overlap"><div class="text-wrapper">Home</div></div>
+        <!-- <div class="overlap"><div class="text-wrapper">Home</div></div>
         <div class="overlap-group"><div class="text-wrapper-2">Calendar</div></div>
         <div class="div-wrapper"><div class="text-wrapper-3">Projects</div></div>
         <div class="overlap-2"><div class="text-wrapper-4">Resources</div></div>
@@ -239,10 +245,17 @@
         <div class="overlap-4"><div class="text-wrapper-6">Post</div></div>
         <div class="overlap-5"><div class="text-wrapper-7">Enter message here:</div></div>
         <div class="overlap-6"><div class="text-wrapper-8">LSU GDC</div></div>
+        
         <div class="overlap-7">
           <div class="rectangle"></div>
           <div class="text-wrapper-9">Key Legend:</div>
-        </div>
+        </div> -->
+        <div class="overlap-4"><div class="text-wrapper-6">Post</div></div>
+        <div class="overlap-5"><div class="text-wrapper-7">Enter message here:</div></div>
+        <div class="overlap-7">
+            <div class="rectangle"></div>
+            <div class="text-wrapper-9">Key Legend:</div>
+          </div>
       </div>
     </div>
   </body>
