@@ -97,7 +97,7 @@ button{
 }
 .grid-item {
     width:30%;
-    min-width: 200px;
+    min-width: 240px;
     max-width:300px;
     height:150px;
     padding:5px;
@@ -114,6 +114,9 @@ button{
 .grid-item a {
     font-size:x-large;
     margin-bottom:70px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .grid-item img {
     width:70px;
