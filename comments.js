@@ -2,7 +2,7 @@
 
 //Loading the comments section
 comments_section_id = window.location.href; 
-var addCommentHTML = '<div class="add-comment"><textarea id="name" cols="40" rows="1"></textarea><br/><textarea id="new-comment" cols="40" rows="3"></textarea><br/><button id="submit">Submit</button></div>';
+var addCommentHTML = '<div class="add-comment"><textarea id="name" cols="40" rows="1" placeholder="Name"></textarea><br/><textarea id="new-comment" cols="40" rows="3" placeholder="Write your comment here."></textarea><br/><button id="submit">Submit</button></div>';
 var commentsHTML = '<hr/><h3>Comments</h3><div id="addComment"></div><button id="purgeLS">DEBUG: Delete All Comments</button><div id="comments"><h4 id="nocomments">No comments</h4></div>';
 loadComments();
 var commentTarget = document.getElementById("comments");

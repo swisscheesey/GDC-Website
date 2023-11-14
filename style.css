@@ -1,3 +1,14 @@
+/*-------GLOBAL-------*/
+#main-content{
+    margin-top:110px;
+    padding:8px;
+    background-color: #d9d9d9;
+    min-height: 30px;
+}
+#main-content>h1{
+    margin:0px;
+    text-align: center;
+}
 body{
     font-family:'Geaux', 'Archivo Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
@@ -6,7 +17,19 @@ body{
 p{
     font-family: 'Arial Narrow', Arial, sans-serif;
 }
-/*---------------------*/
+textarea{
+    background-color: whitesmoke;
+    color:black;
+    resize:none;
+}
+
+button{
+    /* color: black;
+    background-color: #d1dede; */
+    background-color: #461d7c;
+    color:#fccf23;
+}
+/*-------HEADER-------*/
 #header{
     font-family:'Geaux', 'Archivo Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     z-index: 100;
@@ -53,17 +76,15 @@ p{
     color: #fdd023;
     font-size:xx-large;
 }
-/*---------------------*/
-#main-content{
-    margin-top:110px;
-    padding:8px;
-    background-color: #d9d9d9;
-    min-height: 30px;
+#footer{
+    margin-top:10px;
+    background-color: #461d7c;
+    height:140px;
+    width:100%;
+    position:relative;
+    color:#d9d9d9;
 }
-#main-content>h1{
-    margin:0px;
-    text-align: center;
-}
+/*------GAMES PAGE-----*/
 .grid-container {
     margin-top:20px;
     margin-bottom:20px;
@@ -105,16 +126,13 @@ p{
     float:left;
     margin:0px;
 }
-/*---------------------*/
-#footer{
-    margin-top:10px;
-    background-color: #461d7c;
-    height:140px;
-    width:100%;
-    position:relative;
-    color:#d9d9d9;
+#search{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:18px;
 }
-/*--------------------*/
+/*-----GAME PAGE------*/
 .game{
     /* margin-left: auto;
     margin-right: auto; */
@@ -126,18 +144,6 @@ p{
     width: 800px;
     background-color: black;
     padding: 30px;
-}
-
-textarea{
-    background-color: whitesmoke;
-    color:black;
-}
-
-button{
-    /* color: black;
-    background-color: #d1dede; */
-    background-color: #461d7c;
-    color:#fccf23;
 }
 #root-comment{
     border:none;
