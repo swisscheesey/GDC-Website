@@ -243,8 +243,47 @@
             <script src="header-footer.js"></script>
         </body>
         </html>
-        <div class="overlap-4"><div class="text-wrapper-6">Post</div></div>
-        <div class="overlap-5"><div class="text-wrapper-7">Enter message here:</div></div>
+    
+        <div class="overlap-4"id="postButton"><div class="text-wrapper-6">Post</div></div>
+        <!-- Post Modal -->
+        <div id="overlay"></div>
+        <div id="postModal">
+            <h2>Post Information</h2>
+            <!-- Add your form elements for posting information -->
+            <!-- For simplicity, a text area is included in this example -->
+            <textarea id="postContent" rows="4" cols="50" placeholder="Enter your information here"></textarea>
+            <br>
+            <button onclick="postInformation()">Submit</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+
+        <script>
+            // JavaScript functions
+            document.getElementById('postButton').addEventListener('click', openModal);
+        
+            function openModal() {
+                document.getElementById('postModal').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            }
+        
+            function closeModal() {
+                document.getElementById('postModal').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none';
+            }
+        
+            function postInformation() {
+                // Add your logic to handle the posted information
+                // You can use the value of the text area as the posted content
+                var postContent = document.getElementById('postContent').value;
+                console.log('Posted Content:', postContent);
+        
+                // Close the modal after posting (you can modify this based on your requirements)
+                closeModal();
+            }
+        </script>
+
+
+
         <div class="overlap-7">
             <div class="text-wrapper-9">Key Legend:</div>
             <div class="rectangle"></div>
