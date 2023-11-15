@@ -15,48 +15,6 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
                   integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-            <style>
-                .card{
-                    padding: 20px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                }
-
-                .card-header{
-                    border: 10px #461D7C !important; /* Adjust the border properties as needed */
-                }
-                
-
-                #monthAndYear{
-                    color:#461D7C;
-                    background-color: lightgray;
-                }
-        
-                #previous, #next{
-                    color:#461D7C;
-                    font-weight: bold;
-                    background-color: lightgray;
-                }
-        
-                #calendar{
-                    background-color: lightgray;
-                    color:#461D7C;
-                    border-color:#461D7C;
-                }
-        
-                #month, #year{
-                    color:#461D7C;
-                    font-weight: bold;
-                    background-color: lightgray;
-                    border-color:#461D7C;
-                    border-radius:0fr;
-                }
-        
-                #jumpTo{
-                    color:#461D7C;
-                    font-weight: bold;
-                    background-color: lightgray;
-                }
-            </style>
         
         </head>
         <body style="background-color: #461D7C;">
@@ -141,93 +99,7 @@
                 </div>
             </div>
             
-            <script>
-                    let today = new Date();
-                    let currentMonth = today.getMonth();
-                    let currentYear = today.getFullYear();
-                    let selectYear = document.getElementById("year");
-                    let selectMonth = document.getElementById("month");
-        
-                    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        
-                    let monthAndYear = document.getElementById("monthAndYear");
-                    monthAndYear.style.border = "10px solid black";
-                    showCalendar(currentMonth, currentYear);
-        
-        
-                    function next() {
-                        currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
-                        currentMonth = (currentMonth + 1) % 12;
-                        showCalendar(currentMonth, currentYear);
-                    }
-        
-                    function previous() {
-                        currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
-                        currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-                        showCalendar(currentMonth, currentYear);
-                    }
-        
-                    function jump() {
-                        currentYear = parseInt(selectYear.value);
-                        currentMonth = parseInt(selectMonth.value);
-                        showCalendar(currentMonth, currentYear);
-                    }
-        
-                    function showCalendar(month, year) {
-        
-                        let firstDay = (new Date(year, month)).getDay();
-                        let daysInMonth = 32 - new Date(year, month, 32).getDate();
-        
-                        let tbl = document.getElementById("calendar-body"); // body of the calendar
-                        tbl.style.border = "1px solid black";
-                        // clearing all previous cells
-                        tbl.innerHTML = '';
-        
-                        // filing data about month and in the page via DOM.
-                        monthAndYear.innerHTML = months[month] + " " + year;
-                        selectYear.value = year;
-                        selectMonth.value = month;
-        
-                        // creating all cells
-                        let date = 1;
-                        for (let i = 0; i < 5; i++) {
-                            // creates a table row
-                            let row = document.createElement("tr");
-                            row.style.border = "1px solid black";
-        
-                            //creating individual cells, filing them up with data.
-                            for (let j = 0; j < 7; j++) {
-                                if (i === 0 && j < firstDay) {
-                                    let cell = document.createElement("td");
-                                    let cellText = document.createTextNode("");
-                                    cell.appendChild(cellText);
-                                    row.appendChild(cell);
-                                }
-                                else if (date > daysInMonth) {
-                                    break;
-                                }
-        
-                                else {
-                                    let cell = document.createElement("td");
-                                    cell.style.border = "1px solid black";
-                                    let cellText = document.createTextNode(date);
-                                    if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                                        cell.classList.add("bg-info");
-                                    } // color today's date
-                                    cell.appendChild(cellText);
-                                    row.appendChild(cell);
-                                    date++;
-                                }
-        
-        
-                            }
-        
-                            tbl.appendChild(row); // appending each row into calendar body.
-                        }
-        
-        }
-        
-            </script>
+            <script src="createCalendar.js"></script>
         
             <!-- Bootstrap JavaScript (jQuery and Popper.js) -->
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -240,11 +112,13 @@
                     integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
                     crossorigin="anonymous"></script>
             <div id="footer" style="display:none"></div> <!-- TEST1234 -->
+            
             <script src="header-footer.js"></script>
         </body>
         </html>
     
-        <div class="overlap-4"id="postButton"><div class="text-wrapper-6">Post</div></div>
+        <div class="overlap-4"id="postButton">
+        <div class="text-wrapper-6">Post</div></div>
         <!-- Post Modal -->
         <div id="overlay"></div>
         <div id="postModal">
@@ -257,31 +131,7 @@
             <button onclick="closeModal()">Cancel</button>
         </div>
 
-        <script>
-            // JavaScript functions
-            document.getElementById('postButton').addEventListener('click', openModal);
-        
-            function openModal() {
-                document.getElementById('postModal').style.display = 'block';
-                document.getElementById('overlay').style.display = 'block';
-            }
-        
-            function closeModal() {
-                document.getElementById('postModal').style.display = 'none';
-                document.getElementById('overlay').style.display = 'none';
-            }
-        
-            function postInformation() {
-                // Add your logic to handle the posted information
-                // You can use the value of the text area as the posted content
-                var postContent = document.getElementById('postContent').value;
-                console.log('Posted Content:', postContent);
-        
-                // Close the modal after posting (you can modify this based on your requirements)
-                closeModal();
-            }
-        </script>
-
+        <script src="postbutton.js"></script>
 
 
         <div class="overlap-7">

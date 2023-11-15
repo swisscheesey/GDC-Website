@@ -148,3 +148,44 @@
     width:14%;
     height:50px;
   }
+
+  .card{
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header{
+    border: 10px #461D7C !important; /* Adjust the border properties as needed */
+}
+
+
+#monthAndYear{
+    color:#461D7C;
+    background-color: lightgray;
+}
+
+#previous, #next{
+    color:#461D7C;
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+#calendar{
+    background-color: lightgray;
+    color:#461D7C;
+    border-color:#461D7C;
+}
+
+#month, #year{
+    color:#461D7C;
+    font-weight: bold;
+    background-color: lightgray;
+    border-color:#461D7C;
+    border-radius:0fr;
+}
+
+#jumpTo{
+    color:#461D7C;
+    font-weight: bold;
+    background-color: lightgray;
+}
