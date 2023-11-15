@@ -120,3 +120,8 @@
     line-height: normal;
     white-space: nowrap;
   }
+
+  #calendar-body td{
+    width:14%;
+    height:50px;
+  }
