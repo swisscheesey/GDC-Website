@@ -16,6 +16,9 @@ function postInformation() {
     var postContent = document.getElementById('postContent').value;
     console.log('Posted Content:', postContent);
 
+    var displayArea = document.getElementById('displayArea');
+    displayArea.innerHTML = '<p><strong>GDC Officer:</strong> ' + postContent + '</p>';
+
     // Close the modal after posting (you can modify this based on your requirements)
     closeModal();
 }
