@@ -129,11 +129,12 @@ function updateTooltip(date){
         }
     }
     if(!found){
-        tooltip_event_name.innerHTML = "No event";
+        tooltip_event_name.innerHTML = "No events";
         tooltip_event_time.innerHTML = '';
         tooltip_event_description.innerHTML = '';
         tooltip_next_button.className = "tooltip-nav-inactive";
-        tooltip_prev_button.className = "tooltip-nav-inactive";   
+        tooltip_prev_button.className = "tooltip-nav-inactive";
+        tooltip_event_number.innerHTML = `-`;
     }
 }
 //Fills the data from the tooltipEvents[index] into the tooltip
