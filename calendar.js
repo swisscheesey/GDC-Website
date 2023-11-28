@@ -140,9 +140,9 @@ function updateTooltip(date){
 //Fills the data from the tooltipEvents[index] into the tooltip
 function drawEvent(index){
     if(tooltipEvents.length === 0) return;
-    console.log(`${index}%${tooltipEvents.length}`);
+    //console.log(`${index}%${tooltipEvents.length}`);
     index = index % tooltipEvents.length;
-    console.log(index);
+    //console.log(index);
     tooltip_event_name.innerHTML = tooltipEvents[index].title;
     tooltip_event_time.innerHTML = tooltipEvents[index].time;
     tooltip_event_description.innerHTML = tooltipEvents[index].desc;
@@ -246,7 +246,8 @@ document.addEventListener("click", (mouseEvent) =>{
         drawEvent(tooltipIndex);
     }
     else if(type === "tooltip-prev"){
-        tooltipIndex = (monthEvents.length + tooltipIndex) - 1;
+        //console.log(monthEvents.length);
+        tooltipIndex = (tooltipEvents.length + tooltipIndex) - 1;
         drawEvent(tooltipIndex);
     }
     else{
