@@ -246,7 +246,7 @@ document.addEventListener("click", (mouseEvent) =>{
         drawEvent(tooltipIndex);
     }
     else if(type === "tooltip-prev"){
-        tooltipIndex = (monthEvents.length + tooltipIndex);
+        tooltipIndex = (monthEvents.length + tooltipIndex) - 1;
         drawEvent(tooltipIndex);
     }
     else{
