@@ -17,6 +17,9 @@
     /* left:300px;
     top:150px; */
 }
+#tooltip hr{
+    margin:2px;
+}
 #event-description{
     white-space: pre-wrap;
 }
