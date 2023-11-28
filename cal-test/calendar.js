@@ -1,5 +1,5 @@
 // debug
-localStorage.clear();
+//localStorage.clear();
 
 let date = new Date();
 let month = date.getMonth();

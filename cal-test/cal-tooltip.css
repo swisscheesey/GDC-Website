@@ -45,11 +45,16 @@
 }
 #new-event textarea{
     resize:none;
-    width:100%;
+    width:190px;
+    padding:5px;
 }
 #new-event button{
     padding:4px;
 }
 #tooltip button{
     padding:4px;
+}
+#cancel{
+    background-color:rgb(200, 0, 0);
+    color:#ffffff;
 }
