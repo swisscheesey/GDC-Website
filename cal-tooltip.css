@@ -17,6 +17,9 @@
     /* left:300px;
     top:150px; */
 }
+#event-description{
+    white-space: pre-wrap;
+}
 #event-name{
     font-weight: bold;
 }
