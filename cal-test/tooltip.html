@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tooltip</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cal-tooltip.css">
+</head>
+<body>
+    <div id="tooltip">
+        <div id="selected-date">[dd/mm/yy]</div>
+        <div id="selected-date-events" style="display:hidden">
+            <div id="event-name"><b>[name]</b></div>
+            <div id="event-time">[time]</div>
+            <div id="event-description">[description]</div>
+        </div>
+        <button id="add-event">Add Event</button>
+    </div>
+    <div id="new-event">
+        <b>Add Event</b>
+        <textarea id="name" rows=1 placeholder="Event Name"></textarea>
+        <textarea id="time" rows=1 placeholder="Time"></textarea>
+        <textarea id="desc" rows=5 placeholder="Descripton"></textarea>
+        <button id="submit">Post</button>
+        <button id="submit">Cancel</button>
+    </div>
+    <script src="calendar-tooltip.js"></script>
+</body>
+</html>

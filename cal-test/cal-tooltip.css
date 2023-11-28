@@ -1,0 +1,55 @@
+* {
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+}
+#tooltip{
+    position:absolute;
+    z-index:999;
+    background-color: #fff;
+    border-radius:10px;
+    border-color:black;
+    border-style:solid;
+    padding:10px;
+    width:300px;
+    text-align:center;
+/* This is the responsibility of JS */
+    /* left:300px;
+    top:150px; */
+}
+#event-name{
+    font-weight: bold;
+}
+#event-nav{
+    text-align:center;
+    display:flex;
+    width:100%;
+}
+.tooltip-nav-inactive{
+    background-color:#888;
+    color:#555;
+}
+#new-event{
+    text-align: center;
+    width:200px;
+    position:absolute;
+    z-index:999;
+    background-color: #fff;
+    border-radius:10px;
+    border-color:black;
+    border-style:solid;
+    padding:10px;
+/* This is the responsibility of JS */
+    left:30px;
+    top:10px;
+}
+#new-event textarea{
+    resize:none;
+    width:100%;
+}
+#new-event button{
+    padding:4px;
+}
+#tooltip button{
+    padding:4px;
+}
