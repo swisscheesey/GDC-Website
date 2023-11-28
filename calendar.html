@@ -1,190 +1,63 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="globals.css">
-    <link rel="stylesheet" href="calendar-style.css">
+<html lang="en">
+<head>
+    <title>Calendar</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="frame" onmousedown="startDrag(event)">
-      <div class="div">
-        <head>
-            <meta charset="UTF-8">
-            <title>Interactive Calendar</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-                  integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        
-        </head>
-        <body style="background-color: #461D7C;">
-            <div id="header"></div> <!-- TEST1234 -->
-            <div style="margin: 50px">.</div>
-            <div class="container mt-5">
-                <div class="card">
-                    <h3 class="card-header" id="monthAndYear"></h3>
-                    <table class="table table-bordered" id="calendar">
-                        <thead>
-                            <tr>
-                                <th>Sun</th>
-                                <th>Mon</th>
-                                <th>Tue</th>
-                                <th>Wed</th>
-                                <th>Thu</th>
-                                <th>Fri</th>
-                                <th>Sat</th>
-                            </tr>
-                        </thead>
-                        <tbody id="calendar-body">
-                            <!-- Calendar days will be inserted here dynamically -->
-                        </tbody>
-                    </table>
-        
-                    <div class="form-inline">
-                        <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
-                        <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
-                    </div>
-                    <br />
-                    <form class="form-inline">
-                        <label class="lead mr-2 ml-2" for="month"id="jumpTo">Jump To: </label>
-                        <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
-                            <option value=0>Jan</option>
-                            <option value=1>Feb</option>
-                            <option value=2>Mar</option>
-                            <option value=3>Apr</option>
-                            <option value=4>May</option>
-                            <option value=5>Jun</option>
-                            <option value=6>Jul</option>
-                            <option value=7>Aug</option>
-                            <option value=8>Sep</option>
-                            <option value=9>Oct</option>
-                            <option value=10>Nov</option>
-                            <option value=11>Dec</option>
-                        </select>
-                        <label for="year"></label>
-                        <select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
-                            <option value=2000>2000</option>
-                            <option value=2001>2001</option>
-                            <option value=2002>2002</option>
-                            <option value=2003>2003</option>
-                            <option value=2004>2004</option>
-                            <option value=2005>2005</option>
-                            <option value=2006>2006</option>
-                            <option value=2007>2007</option>
-                            <option value=2008>2008</option>
-                            <option value=2009>2009</option>
-                            <option value=2010>2010</option>
-                            <option value=2011>2011</option>
-                            <option value=2012>2012</option>
-                            <option value=2013>2013</option>
-                            <option value=2014>2014</option>
-                            <option value=2015>2015</option>
-                            <option value=2016>2016</option>
-                            <option value=2017>2017</option>
-                            <option value=2018>2018</option>
-                            <option value=2019>2019</option>
-                            <option value=2020>2020</option>
-                            <option value=2021>2021</option>
-                            <option value=2022>2022</option>
-                            <option value=2023>2023</option>
-                            <option value=2024>2024</option>
-                            <option value=2025>2025</option>
-                            <option value=2026>2026</option>
-                            <option value=2027>2027</option>
-                            <option value=2028>2028</option>
-                            <option value=2029>2029</option>
-                            <option value=2030>2030</option>
-                        </select>
-                    </form>
+    <link rel="stylesheet" href="calendar-style.css">
+    <link rel="stylesheet" href="cal-tooltip.css">
+</head>
+<body>
+    <div id="header"></div>
+    <div id="main-content">
+        <h1>Calendar</h1>
+        <br/>
+        <div class="calendar-container">
+            <header class="calendar-header">
+                <p class="calendar-current-date"></p>
+                <div class="calendar-navigation">
+                    <span id="calendar-prev"><</span>
+                    <span id="calendar-next">></span>
                 </div>
+            </header>
+            <div class="calendar-body">
+                <ul class="days">
+                    <li>Su</li>
+                    <li>Mo</li>
+                    <li>Tu</li>
+                    <li>We</li>
+                    <li>Th</li>
+                    <li>Fr</li>
+                    <li>Sa</li>
+                </ul>
+                <ul class="calendar-dates"></ul>
             </div>
-            
-            <script src="createCalendar.js"></script>
-        
-            <!-- Bootstrap JavaScript (jQuery and Popper.js) -->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                    crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                    crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-                    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-                    crossorigin="anonymous"></script>
-            <div id="footer" style="display:none"></div> <!-- TEST1234 -->
-
-            <script src="header-footer.js"></script>
-        </body>
-        </html>
-    
-        <div class="overlap-4"id="postButton">
-        <div class="text-wrapper-6">Post</div></div>
-        <!-- Post Modal -->
-        <div id="overlay"></div>
-        <div id="postModal">
-            <h2>Post Information</h2>
-            <!-- Add your form elements for posting information -->
-            <!-- For simplicity, a text area is included in this example -->
-            <textarea id="postContent" rows="4" cols="50" placeholder="Enter your information here"></textarea>
-            <br>
-            <button onclick="postInformation()">Submit</button>
-            <button onclick="closeModal()">Cancel</button>
-        </div>
-
-        <div id="displayArea"></div>
-
-        <script src="postbutton.js"></script>
-
-
-        <div class="overlap-7">
-            <div class="text-wrapper-9">Key Legend:</div>
-            <div class="rectangle"></div>
-            <div class="icon" id="icon1" draggable="true" ondragstart="drag(event)">⭐</div>
         </div>
     </div>
-    <script>
-        let activeItem = null;
-        let offsetX, offsetY;
-    
-        function drag(e) {
-            e.preventDefault(); // Prevent default drag-and-drop behavior
-            activeItem = e.target;
-            const rect = activeItem.getBoundingClientRect();
-            offsetX = e.clientX - (rect.left + rect.width / 2);
-            offsetY = e.clientY - (rect.top + rect.height / 2);
-            e.dataTransfer.setData('text/html', '');
-        }
-    
-        function startDrag(e) {
-            function moveIcon(e) {
-                const x = e.clientX - offsetX;
-                const y = e.clientY - offsetY;
-    
-                activeItem.style.left = x + 'px';
-                activeItem.style.top = y + 'px';
-    
-                // Scroll the webpage up when dragging the icon up
-                if (y < 0) {
-                    window.scrollBy(0, -10); // Adjust the scroll speed as needed
-                }
-            }
-    
-            function stopDrag() {
-                document.removeEventListener('mousemove', moveIcon);
-                document.removeEventListener('mouseup', stopDrag);
-            }
-    
-            document.addEventListener('mousemove', moveIcon);
-            document.addEventListener('mouseup', stopDrag);
-        }
-    </script>
-    
-    
-    
-    
-            <div class="text-wrapper-9">Key Legend:</div>
-          </div>
-      </div>
+    <div id="tooltip" style="display:none" class="tooltip">
+        <div id="selected-date" class="tooltip">[dd/mm/yy]</div>
+        <div id="selected-date-events" style="display:hidden" class="tooltip">
+            <div id="event-name" class="tooltip">[name]</div>
+            <div id="event-time" class="tooltip">[time]</div>
+            <div id="event-description" class="tooltip">[description]</div>
+        </div>
+        <div id="event-nav" class="tooltip">
+            <button id="prev-event" class="tooltip-prev" style="float:left"><</button>
+            <div id="count" class="tooltip" style="margin:auto">(0/0)</div>
+            <button id="next-event" class="tooltip-next" style="float:right">></button>
+        </div>
+        <button id="add-event">Add Event</button>
     </div>
-  </body>
+
+    <div id="new-event" style="display:none">
+        <b>Add Event</b>
+        <textarea id="name" rows=1 placeholder="Event Name"></textarea>
+        <textarea id="time" rows=1 placeholder="Time"></textarea>
+        <textarea id="desc" rows=5 placeholder="Descripton"></textarea>
+        <button id="post">Post</button>
+        <button id="cancel">Cancel</button>
+    </div>
+    <div id="footer"></div>
+    <script src="header-footer.js"></script>
+    <script src="calendar.js"></script>
+</body>
 </html>
