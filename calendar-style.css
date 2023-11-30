@@ -16,7 +16,7 @@
     display:flex;
     align-items:center;
     padding: 25px 30px 10px;
-    justify-content: space-between;
+    justify-content: center;
 }
 header .calendar-navigation {
     display:flex;
@@ -42,6 +42,9 @@ header .calendar-navigation span:hover{
 header .calendar-current-date {
     font-weight: 500;
     font-size: 1.45rem;
+    width:200px;
+    line-height:40px;
+    text-align: center;
 }
 .calendar-body{
     padding: 20px;
@@ -57,6 +60,7 @@ header .calendar-current-date {
 }
 .calendar-body li{
     width: calc(100%/7);
+    /* height: 40px; */
     font-size: 1.07rem;
     color: #414141;
 }
