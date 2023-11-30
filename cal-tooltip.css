@@ -13,7 +13,7 @@
     padding:10px;
     width:300px;
     text-align:center;
-    font-family:Helvetica;
+    
     box-shadow:5px 5px 10px #000;
 /* This is the responsibility of JS */
     /* left:300px;
@@ -23,10 +23,15 @@
     margin:2px;
 }
 #event-description{
+    font-family:Helvetica;
     white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 #event-name{
     font-weight: bold;
+}
+#event-time{
+    font-family:Helvetica;
 }
 #event-nav{
     text-align:center;
@@ -39,7 +44,7 @@
 }
 #new-event{
     text-align: center;
-    width:200px;
+    width:220px;
     position:absolute;
     z-index:999;
     background-color: #fff;
@@ -52,8 +57,23 @@
     top:10px;
 }
 #new-event textarea{
+    background-color: whitesmoke;
+    color:black;
     resize:none;
-    width:190px;
+    border-style:dashed;
+}
+#new-event input{
+    width:98px;
+    margin-bottom:3px;
+    background-color: whitesmoke;
+    border-color:#555;
+    border-style:dashed;
+    border-width: 1px;;
+    color:black;
+}
+#new-event textarea{
+    resize:none;
+    width:200px;
     padding:5px;
 }
 #new-event button{

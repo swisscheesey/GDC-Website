@@ -1,5 +1,5 @@
 // debug
-//localStorage.clear();
+localStorage.clear();
 
 let date = new Date();
 let month = date.getMonth();
@@ -41,7 +41,26 @@ const tooltip_event_number = document.getElementById("count");
 //Event Creator Handles
 const eventCreator = document.getElementById("new-event");
 const eventTitle = document.getElementById("name");
-const eventTime = document.getElementById("time");
+const eventStartTime = document.getElementById("start-time");
+const eventEndTime = document.getElementById("end-time");
+function getEventTime(){
+    return convertTimeMeridian(eventStartTime.value) + " ~ " + convertTimeMeridian(eventEndTime.value);
+};
+function convertTimeMeridian(time){
+    var hour, minute
+    var meridian = 'pm';
+    split = time.split(':');
+    hour = split[0];
+    minute = split[1];
+    if(hour > 12){
+        hour -= 12;
+    }
+    else if(hour < 12){
+        meridian = 'am';
+        if(hour == 0) hour = 12;
+    }
+    return `${parseInt(hour)}:${minute}${meridian}`;
+}
 const eventDescription = document.getElementById("desc");
 
 var tooltip_event_index = 0;
@@ -173,8 +192,13 @@ function showEventCreator(){
 function hideEventCreator(){
     eventCreator.style.display="none";
     eventTitle.value = "";
-    eventTime.value = "";
+    eventStartTime.value = "";
+    eventEndTime.value = "";
     eventDescription.value = "";
+    eventTitle.style.backgroundColor = "whitesmoke";
+    eventDescription.style.backgroundColor = "whitesmoke";
+    eventStartTime.style.backgroundColor = "whitesmoke";
+    eventEndTime.style.backgroundColor = "whitesmoke";
 }
 //Self-explanatory
 function moveEventCreator(x, y){
@@ -266,7 +290,8 @@ document.getElementById("cancel").addEventListener("click", (e) =>{
 })
 //Adds event
 document.getElementById("post").addEventListener("click", (e) => {
-    var newEvent = buildStoredEvent(eventTitle.value,eventDay,eventTime.value,eventDescription.value);
+    if(!validateInput()){return};
+    var newEvent = buildStoredEvent(eventTitle.value,eventDay,getEventTime(),eventDescription.value);
     console.log(newEvent);
     storeEvent(newEvent);
     //loadStoredEvents();//replace with 
@@ -274,3 +299,33 @@ document.getElementById("post").addEventListener("click", (e) => {
     console.log(monthEvents);
     hideEventCreator();
 })
+
+function validateInput(){
+    var valid = true;
+    if(eventTitle.value == ""){
+        eventTitle.style.backgroundColor = "#ffcccc";
+        valid = false;
+    } else eventTitle.style.backgroundColor = "#ccffcc";
+    if(eventDescription.value == ""){
+        eventDescription.style.backgroundColor = "#ffcccc";
+        valid = false;
+    } else eventDescription.style.backgroundColor = "#ccffcc";
+    if(eventStartTime.value == ""){
+        eventStartTime.style.backgroundColor = "#ffcccc";
+        valid = false;
+    } else eventStartTime.style.backgroundColor = "#ccffcc";
+    if(eventEndTime.value == ""){
+        eventEndTime.style.backgroundColor = "#ffcccc";
+        valid = false;
+    } else eventEndTime.style.backgroundColor = "#ccffcc";
+    if(eventStartTime.value > eventEndTime.value){
+        eventStartTime.style.backgroundColor = "#ffcccc";
+        eventEndTime.style.backgroundColor = "#ffcccc";
+        valid = false;
+    }
+    console.log(eventStartTime.value + " - " + eventEndTime.value);
+    return valid;   
+}
+
+//Debug: purge ls
+document.getElementById('purgeLS').addEventListener('click', (ev)=>{localStorage.clear(); history.go(0);});

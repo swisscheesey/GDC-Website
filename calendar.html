@@ -53,13 +53,18 @@
     <div id="new-event" style="display:none">
         <b>Add Event</b>
         <textarea id="name" rows=1 placeholder="Event Name"></textarea>
-        <textarea id="time" rows=1 placeholder="Time"></textarea>
+        <div id="time-input">
+            <input type="time" id="start-time"/> - <input type="time" id="end-time"/>
+        </div>
         <textarea id="desc" rows=5 placeholder="Descripton"></textarea>
         <button id="post">Post</button>
         <button id="cancel">Cancel</button>
     </div>
+    
     <div id="footer"></div>
+    <button id="purgeLS">DEBUG: purgeLS</button>
     <script src="header-footer.js"></script>
     <script src="calendar.js"></script>
+    
 </body>
 </html>
